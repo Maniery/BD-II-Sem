@@ -29,7 +29,8 @@ A aplicação demonstra de forma prática os pilares do CRUD do SGBD utilizando 
 ## 🛠️ Instalação e Configuração do Ambiente
 
 O ecossistema do projeto foi projetado para ser resiliente e de fácil orquestração.
-
+### 0. Git clone https://github.com/Maniery/BD-II-Sem
+* Clonando o repositório
 ### 1. Pré-requisitos
 * Node.js instalado localmente.
 * Docker / Docker Desktop (para replicação do ambiente de banco isolado).
