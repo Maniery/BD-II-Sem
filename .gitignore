@@ -1,0 +1,12 @@
+# Dependências do Node.js
+node_modules/
+package-lock.json
+
+# Arquivos de log e sistema
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Configurações locais de IDEs
+.vscode/
+.idea/
