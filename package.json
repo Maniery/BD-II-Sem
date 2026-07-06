@@ -1,10 +1,10 @@
 {
   "name": "projeto-mongodb-streaming",
   "version": "1.0.0",
-  "description": "Protótipo de catálogo de filmes usando MongoDB",
-  "main": "index.js",
+  "description": "Catálogo de filmes usando MongoDB",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "axios": "^1.18.1",

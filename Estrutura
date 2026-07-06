@@ -1,0 +1,16 @@
+BDII SEM/
+├── src/
+│   ├── routes/
+│   │   └── midiaRoutes.js   # Controlador (Controller) - Fluxo de requisições e regras de negócio
+│   ├── services/
+│   │   └── database.js      # Modelo (Model) - Conexão e regras do buffer de contingência
+│   ├── utils/
+│   │   ├── imageHelper.js   # Utilitário - Otimização de links e resolução de posters para HD
+│   │   ├── ratingHelper.js  # Utilitário - Conversor do padrão MPA (EUA) para ClassInd (BR)
+│   │   └── translator.js    # Utilitário - Integração com API externa de tradução de sinopses
+│   ├── views/
+│   │   ├── layout.js        # Visão (View) - Estrutura global do HTML, CSS unificado e Modais
+│   │   └── midiaView.js     # Visão (View) - Componentes visuais dinâmicos (Cards, Busca, Teoria)
+│   └── server.js            # Ponto de Entrada (Bootstrap da aplicação)
+├── package.json             # Manifesto de dependências e scripts do ecossistema
+└── README.md                # Documentação técnica e guia de inicialização

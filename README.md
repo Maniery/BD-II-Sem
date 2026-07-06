@@ -1,41 +1,38 @@
-# 🎬 CineAtlas PRO - Catálogo de Streaming NoSQL
+# CineAtlas PRO 🎬
 
-Este repositório contém o material completo desenvolvido para o seminário da disciplina de **Banco de Dados II**. O projeto consiste em uma plataforma web dinâmica integrada em tempo real ao banco de dados NoSQL em nuvem **MongoDB Atlas**.
+O **CineAtlas PRO** é um ecossistema inteligente para catálogos de streaming desenvolvido em Node.js. Ele consome dados em tempo real da OMDb API, realiza a tradução automatizada de sinopses e faz o mapeamento dinâmico da classificação indicativa para o padrão brasileiro (ClassInd), aplicando estilização visual baseada no nível de restrição.
 
----
-
-## 👥 Equipe
-* **Integrante:** Laety Maniery de Araújo Batista
+O grande diferencial do projeto é o seu **Modo de Contingência Híbrido**: caso o banco de dados MongoDB fique inacessível ou desconectado, o sistema ativa automaticamente um buffer em memória (Sandbox) para manter a aplicação 100% funcional.
 
 ---
 
-## 🗄️ SGBD Escolhido: MongoDB
-O **MongoDB** é um banco de dados NoSQL líder de mercado, classificado como um SGBD **orientado a documentos**. 
+## 🛠️ Requisitos Mínimos
 
-### Por que usar o MongoDB para Catálogos de Streaming?
-* **Esquema Flexível (Schemaless):** Ao contrário dos bancos relacionais (SQL), os documentos no MongoDB (armazenados em formato BSON) não exigem uma estrutura rígida. Uma mídia do tipo "Série" pode conter o atributo `temporadas` ou `episodios`, enquanto um "Filme" pode omitir esse campo sem a necessidade de migrações complexas de tabelas.
-* **Alta Performance e Escalabilidade:** Ideal para lidar com grandes volumes de leituras e escritas simultâneas, características comuns em plataformas de streaming reais como Netflix e Prime Video.
+Antes de inicializar o projeto, certifique-se de ter instalado em sua máquina:
 
----
-
-## 💡 Conceitos Iniciais e Comandos Básicos
-A aplicação demonstra de forma prática os pilares do CRUD do SGBD utilizando o driver oficial do Node.js:
-
-1. **`insertOne()` (CREATE):** Utilizado na rota `/salvar` da aplicação para capturar os dados enviados pelo formulário web e persistir o novo documento no cluster do MongoDB Atlas.
-2. **`find()` (READ):** Utilizado na rota principal (`/`) para buscar e listar todos os títulos registrados na nuvem, aplicando ordenação decrescente pelo identificador único (`_id`).
+1. **Node.js** (Versão 18 ou superior) -> [Baixar Node.js](https://nodejs.org/)
+2. **MongoDB Community Server** (Recomendado para persistência) -> [Baixar MongoDB](https://www.mongodb.com/try/download/community)
+3. **MongoDB Compass** (Interface visual para gerenciamento de dados) -> [Baixar Compass](https://www.mongodb.com/try/download/compass)
 
 ---
 
-## 🛠️ Instalação e Configuração do Ambiente
+## 🚀 Instruções de Instalação e Compilação (Passos 1 ao 5)
 
-O ecossistema do projeto foi projetado para ser resiliente e de fácil orquestração.
-### 0. Git clone https://github.com/Maniery/BD-II-Sem
-* Clonando o repositório
-### 1. Pré-requisitos
-* Node.js instalado localmente.
-* Docker / Docker Desktop (para replicação do ambiente de banco isolado).
+Siga a sequência abaixo executando os comandos no seu terminal para colocar o projeto para rodar do zero:
 
-### 2. Infraestrutura Local (Docker)
-O repositório inclui o arquivo `docker-compose.yml` pré-configurado para subir uma instância local do banco na porta padrão:
 ```bash
-docker compose up -d
+# PASSO 1: Abra a pasta do projeto no seu editor de código (ex: VS Code) ou navegue até ela via terminal:
+cd "caminho/para/a/pasta/BDII SEM"
+
+# PASSO 2: Instale todas as dependências e bibliotecas do ecossistema (express, axios, mongodb):
+npm install
+
+# PASSO 3: Certifique-se de que o serviço do seu MongoDB local está ativo em segundo plano.
+# O sistema se conectará automaticamente na URI nativa: mongodb://127.0.0.1:27017
+# Nota: Se o banco estiver desligado, o sistema ativará o Modo Sandbox em memória automaticamente!
+
+# PASSO 4: Inicialize o servidor back-end do projeto:
+node src/server.js
+
+# PASSO 5: Abra o seu navegador web e acesse o endereço local para testar o catálogo:
+# http://localhost:3000
